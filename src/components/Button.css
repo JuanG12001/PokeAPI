@@ -1,0 +1,31 @@
+.buttom{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+  color: var(--white);
+  background-color: var(--black);
+  filter: drop-shadow(0 0 9em #f90ee1);
+  border-radius: 20px;
+  border: none;
+  font-size: 1.5rem;
+  padding: 1em;
+  margin-bottom: 30px;
+  cursor: pointer;
+  gap: 15px;
+  transition: .2s;
+}
+
+.buttom--animation:hover{
+  transform: scaley(.9) scalex(.9);
+}
+
+.icon-pokeball{
+  display: block;
+  width: 30px;
+}
+
+
+

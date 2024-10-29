@@ -1,0 +1,126 @@
+
+/* Comienzo del css HOME */
+
+.logo{
+  font-size: 5rem;
+  font-family: 'PokemonSolid';
+  letter-spacing: 8px;
+  text-shadow: 10px 1px 1px rgb(0, 0, 0);
+  color: none;
+  user-select: none;
+  margin-top: -50px;
+}
+
+.home__container{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.home__img{
+  display: block;
+  filter: drop-shadow(0 0 3em #000000);
+  animation-name: mover;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  margin-top: -70px;
+  width: 450px;
+  height: 500px;
+  pointer-events: none;
+}
+
+.home__texts-container{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: start;
+  line-height: 1.2;
+  letter-spacing: .5px;
+}
+
+.home__name-pokemon{
+  font-size: 3.5rem;
+  margin-bottom: 5px;
+}
+
+.home__category{
+  padding: 10px 0px 25px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.home__category-tipo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  list-style: none;
+  border-radius: 50%;
+}
+
+.home__icon{
+  width: 30px;
+}
+
+
+.home__sumary{
+  width: 100%;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+
+
+
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 1.5em #c520e6fc);
+  }
+  25% {
+    transform: translateY(-20px); 
+    filter: drop-shadow(0 0 1.5em #3a0735fc);
+  }
+  50% {
+    transform: translateY(0); 
+    filter: drop-shadow(0 0 1.5em #b11cdefc);
+  }
+  75% {
+    transform: translateY(-20px); 
+    filter: drop-shadow(0 0 1.5em #3a0735fc);
+  }
+  100% {
+    transform: translateY(0); 
+    filter: drop-shadow(0 0 1.5em #c126e8fc);
+  }
+}
+
+
+/* Finalización del css HOME */
+
+
+@media (min-width: 1024px) {
+
+  .container{
+    padding: 20px 10px;
+  }
+
+  .home__container{
+    flex-direction: row;
+  }
+
+  .home__img-container{
+    order: 1;
+  }
+
+  .home__img{
+    width: 500px;
+    height: 550px;
+  }
+ 
+}

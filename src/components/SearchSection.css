@@ -1,0 +1,145 @@
+/* Comienzo del css search */
+
+
+.searh__container-text-tipo{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.search__container-tipos{
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.fa-clipboard{
+  font-size: 2rem; 
+  margin-bottom: 10px;
+  color: #b4afafae;
+}
+
+.search__icon-text{
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #b4afafae;
+}
+
+.search__title-type{
+  color: #ffffff;
+}
+
+.tipo{
+  width: 100%;
+  height: 60px;
+  background-color: rgba(37, 34, 34, 0.592);
+  border: 1px solid white;
+  border-radius: 10px;
+  gap: 10px;
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.tipo__container{
+  list-style: none;
+}
+
+.search__icon-home{
+  background-color: rgba(37, 34, 34, 0.211);
+  width: 80px;
+  height: 60px;
+  border-radius: 10px 0px 0px 10px;
+  border-right: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-house-chimney{
+  cursor: pointer;
+  color: #b4afaf;
+}
+
+.search__buttom{
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 50%;
+  background: linear-gradient(rgb(98, 172, 19), rgb(28, 125, 16));
+  text-decoration: none;
+  color: white;
+}
+
+.search__img-icon{
+  width: 90%;
+  cursor: pointer;
+}
+
+.search__imput{
+  width: 100%;
+}
+
+.search__container-name{
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5rem;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search__input{
+  padding: 0px 1rem;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(37, 34, 34, 0.592);
+  border: 1px solid white;
+  border-radius: 10px 0px 0px 10px;
+  font-size: 2rem;
+  color: rgb(132, 132, 132);
+}
+
+
+.search__input:focus{
+  border: 2px solid #4B82C3; 
+  outline: none; 
+}
+
+.search__container-input{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.search__icon-input{
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: max-content;
+  padding: 15px 20px;
+  border: 1px solid white;
+  border-radius: 0px 10px 10px 0px;
+  height: 60px;
+  background: linear-gradient(-30deg,rgb(38, 22, 144), rgb(42, 11, 43));
+}
+
+
+/* Finalización del css search */
+
+@media (min-width: 1024px) {
+
+  .search{
+    margin-bottom: 80px;
+  }
+ 
+}

@@ -1,0 +1,23 @@
+.redes-icons{
+  display: flex;
+  flex-direction: row;
+  font-size: 2em;
+  gap: 20px;
+  cursor: pointer;
+  align-self: center;
+  filter: drop-shadow(0 0 1.5em #53094cfc);
+}
+
+.fa-brands:hover{
+  transform: scaley(.9) scalex(.9);
+}
+
+
+@media (min-width: 1024px) {
+
+  .redes-icons{
+    align-self: flex-start;
+  }
+
+  
+}

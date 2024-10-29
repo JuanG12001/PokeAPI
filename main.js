@@ -1,13 +1,5 @@
-import './style.css'
-
-document.querySelector('#app').innerHTML = `
-  <div>
-  
-    
-
-   
-  </div>
-`
+// Main.js
+import { App } from "./src/app";
 
 
-
+document.querySelector('#app').innerHTML = App();
