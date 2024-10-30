@@ -1,0 +1,103 @@
+
+
+.card__content{
+  width: 95%;
+  max-width: 450px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient( #09132c,#5F3E7A);
+  box-shadow: 0px 0px 2.5px white;
+}
+
+.card__img{
+  z-index: 10;
+  filter: drop-shadow(0 0 1em #5c0c81);
+  display: block;
+  margin-top: -100px;
+  margin-bottom: -10px;
+  width: 320px;
+  height: 320px;
+}
+
+.card__container-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.card__title{
+  font-size: 3rem;
+  text-transform: capitalize;
+
+}
+
+.fa-circle{
+  font-size: 1rem;
+}
+
+.card__type-container{
+  display: flex;
+  flex-direction: row;
+  padding: 15px 0px;
+  list-style: none;
+  gap: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card__type{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.5rem;
+  width: 160px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+.card__type-img{
+  width: 25px;
+}
+
+.card__estadisticas{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  padding: 15px 0px;
+}
+
+
+.card__altura{
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.card__peso{
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.card__altura-icon{
+  font-size: 1.5rem;
+}
+
+.card__peso-icon{
+  font-size: 1.5rem;
+}
+
+.card__icon{
+  width: 100%;
+}
+
+

@@ -1,5 +1,6 @@
 
 import "./Footer.css";
+import { Redes } from "./Redes";
 
 export const Footer = () =>{
 
@@ -14,11 +15,7 @@ export const Footer = () =>{
             </div>
             
             <div>
-              <div class="redes-icons">
-                <i class="fa-brands fa-github"></i>
-                <i class="fa-brands fa-linkedin"></i>
-                <i class="fa-brands fa-whatsapp"></i>
-              </div>
+              ${Redes()}
             </div>
         
           </div>
