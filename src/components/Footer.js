@@ -10,8 +10,8 @@ export const Footer = () =>{
           <div class="footer_container">
             
             <div class="footer__text">
-              <h3 class="footer_name">Juan Garcia</h3>
-              <h4 class="footer__correo">juanenriquegarcia126@gmail.com</h4>
+              <h3 class="footer_name">${import.meta.env.VITE_NAME_FOOTER}</h3>
+              <h4 class="footer__correo">${import.meta.env.VITE_GMAIL_FOOTER}</h4>
             </div>
             
             <div>

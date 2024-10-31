@@ -1,15 +1,18 @@
 .redes-icons{
   display: flex;
   flex-direction: row;
-  font-size: 2em;
+  font-size: 2.3em;
   gap: 20px;
   cursor: pointer;
   align-self: center;
-  filter: drop-shadow(0 0 1.5em #53094cfc);
 }
 
 .fa-brands:hover{
   transform: scaley(.9) scalex(.9);
+}
+
+.redes-link{
+  color: #ffffff;
 }
 
 
