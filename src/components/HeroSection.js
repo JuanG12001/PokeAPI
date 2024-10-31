@@ -1,50 +1,56 @@
-import { Button } from "./button"
-import { Redes } from "./Redes"
+import { Button } from "./Button";
+import { Redes } from "./Redes";
 import "./HeroSection.css";
+import { pokemonHeroSection } from "../services/apiHeroSection";
+import typeIcons from "../constants/typeIcons";
 
+export const HeroSection = async () => {
+  const pokemonHero = await pokemonHeroSection();
 
+  if (!pokemonHero) {
+    return `<p>Error al cargar la información del Pokémon.</p>`;
+  }
 
-export const HeroSection = ()=>{
+  const { name, sprites, speciesData, textSumary, types } = pokemonHero;
+  const sumary = textSumary;
+  const color = speciesData.color.name;
+
+  const typeIconsList = types.map(typeInfo => {
+    const typeName = typeInfo.type.name;
+    const iconSrc = typeIcons[typeName];
+    return `<li class="${typeName} home__category-tipo">
+              <img class="home__icon" src="${iconSrc}" alt="${typeName}">
+            </li>`;
+  }).join('');
 
   return `
+    <header class="home container" style="background: linear-gradient(${color}, #1c0217);">
+      <h1 class="logo">PokéCap</h1>
+      
+      <div class="home__container container">
+       
+        <div class="home__img-container">
+          <img class="home__img" src="${sprites.other.home.front_default}" alt="${name}">
+        </div> 
 
-      <header class="home container">
-
-          <h1 class="logo">PokéCap</h1>
-          
-          <div class="home__container container">
+        <div class="home__texts-container">
+            
+          <h2 class="home__name-pokemon">${name}</h2>
            
-            <div class="home__img-container">
-              <img class="home__img" src="/src/assets/gengar.png" alt="pokemon-gengar">
-            </div> 
+          <ul class="home__category">
+            ${typeIconsList} 
+          </ul>   
+          
+          <p class="home__sumary">${sumary}</p>
+          
+          ${Button()}
+          
+          ${Redes()}
 
-            <div class="home__texts-container">
-                
-              <h2 class="home__name-pokemon">Gengar</h2>
-               
-                <ul class="home__category">
-                  <li class="ghost home__category-tipo">
-                    <img class="home__icon" src="/src/assets/icon-fantasma.png" alt="">
-                  </li>
-                  <li class="poison home__category-tipo"> 
-                    <img class="home__icon" src="/src/assets/icon-poison.png" alt="">
-                  </li>
-                </ul>   
-                
-                <p class="home__sumary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, quo atque ex, ab repellat vitae, dolores ad quibusdam amet rerum fugit aliquam officia quis. Aliquam ut repellat quod excepturi iste!
-                Reiciendis consectetur expedita odio nesciunt voluptatibus? Ut dolore aspernatur recusandae fuga nam soluta molestias excepturi nemo, eveniet commodi at obcaecati adipisci voluptatem quis magni? Omnis natus laboriosam inventore dignissimos ea!
-                Magnam.</p>
-                
-                ${Button()}
-                
-                ${Redes()}
+        </div> 
 
-            </div> 
+      </div>
 
-          </div>
-
-      </header>
-
-  `
-
-}
+    </header>
+  `;
+};

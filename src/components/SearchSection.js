@@ -24,7 +24,7 @@ export const SearchSection = () =>{
                 <span data-type="tipo-todos" class="search__icon-home"><i class="fa-solid fa-house-chimney"></i></span>
               
                 <li class="tipo__container">
-                  <button class="search__buttom" data-type="tipo-planta"><img class="search__img-icon" src="/src/assets/icon-planta.png" alt=""></button>
+                  <button class="search__buttom" data-type="tipo-planta"><img class="search__img-icon" src="/src/assets/icon-bug.png" alt=""></button>
                 </li>
               
               </ul>

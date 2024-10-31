@@ -10,8 +10,15 @@ export const fetchPokemons = async () =>{
 
     const pokemonDetails = await Promise.all(
       data.results.map(async (pokemon) =>{
-      const pokemonResponse = await fetch(pokemon.url);
-      return await pokemonResponse.json();  
+
+        const pokemonResponse = await fetch(pokemon.url);
+        const pokemonData = await pokemonResponse.json();
+
+        const speciesResponse = await fetch(pokemonData.species.url);
+        const speciesData = await speciesResponse.json();
+
+        return { ...pokemonData, speciesData, types: pokemonData.types };
+      
       })
     )
 

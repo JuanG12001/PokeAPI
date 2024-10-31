@@ -24,7 +24,7 @@ export const PokedexSection = ()=>{
           <div class="pokedex__cantainer-pokemon">
 
             <div class="pokedex__pokemon-contaniner"><img class="pokedex__pokemon pokemon-uno" src="/src/assets/pokeball.png" alt=""></div>
-            <div class="pokedex__pokemon-contaniner"><img class="pokedex__pokemon pokemon-two" src="/src/assets/gengar.png" alt=""></div>
+            <div class="pokedex__pokemon-contaniner"><img class="pokedex__pokemon pokemon-two" src="/src/assets/pokeball.png" alt=""></div>
             <div class="pokedex__pokemon-contaniner"><img class="pokedex__pokemon pokemon-three" src="/src/assets/pokeball.png" alt=""></div>
 
           </div>

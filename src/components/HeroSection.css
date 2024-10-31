@@ -36,6 +36,7 @@
   flex-direction: column;
   align-content: center;
   align-items: start;
+  text-transform: capitalize;
   line-height: 1.2;
   letter-spacing: .5px;
 }

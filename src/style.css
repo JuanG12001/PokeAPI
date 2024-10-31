@@ -55,7 +55,6 @@ body{
 .home{
   grid-area: home;
   width: 100%;
-  background: linear-gradient( #73088a,#1c0217);
   color: var(--white);
   display: flex;
   flex-direction: column;
@@ -154,6 +153,7 @@ body{
 
 
 /* Especiales del css */
+
 .poison{
   background-color: #AA66CC;
 }
@@ -161,6 +161,72 @@ body{
 .ghost{
   background-color: #6666CC;
 }
+
+.psychic{
+  background-color: #843C92;
+}
+
+.normal{
+  background-color: #A2A4A2;
+}
+
+.fire{
+  background-color: #DB3339;
+}
+
+.water{
+  background-color: #3C95DD;
+}
+
+.grass{
+  background-color: #388c3c;
+}
+
+.electric{
+  background-color: #FBD216;
+}
+
+.ice{
+  background-color: #2CD1F4;
+}
+
+.fighting{
+  background-color: #D56C0D;
+}
+
+.ground{
+  background-color: #E7B24B;
+}
+
+.bug{
+  background-color: #A8B81F;
+}
+
+.rock{
+  background-color: #CAB88A;
+}
+
+.dragon{
+  background-color: #0E74CB;
+}
+
+.dark{
+  background-color: #60596B;
+}
+
+.steel{
+  background-color: #5F92A5;
+}
+
+.fairy{
+  background-color: #FB8DEC;
+}
+
+.flying{
+  background-color: #698EBE;
+}
+
+
 /* finalizacion del css */
 
 
@@ -189,7 +255,8 @@ body{
   }
 
   .card__img{
-    margin-top: 0px;
+    margin-top: -20px;
+    margin-bottom: 20px;
     width: 230px;
     height: 230px;
   }
