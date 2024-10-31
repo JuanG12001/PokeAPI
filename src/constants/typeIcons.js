@@ -16,7 +16,7 @@ const typeIcons = {
   dragon:   '/src/assets/icon-dragon.png',
   dark:     '/src/assets/icon-dark.png',
   steel:    '/src/assets/icon-steel.png',
-  fairy:    '/src/assets/icon-fairy.png'
+  fairy:    '/src/assets/icon-fairy.png',
 };
 
 export default typeIcons;

@@ -5,4 +5,6 @@ const renderApp = async () => {
   document.querySelector('#app').innerHTML = appContent;
 };
 
+
+
 renderApp();

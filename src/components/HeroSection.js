@@ -3,6 +3,7 @@ import { Redes } from "./Redes";
 import "./HeroSection.css";
 import { pokemonHeroSection } from "../services/apiHeroSection";
 import typeIcons from "../constants/typeIcons";
+import pokemoncolors from "../constants/pokemonColors";
 
 export const HeroSection = async () => {
   const pokemonHero = await pokemonHeroSection();
@@ -11,9 +12,8 @@ export const HeroSection = async () => {
     return `<p>Error al cargar la información del Pokémon.</p>`;
   }
 
-  const { name, sprites, speciesData, textSumary, types } = pokemonHero;
+  const { name, sprites, textSumary, types } = pokemonHero;
   const sumary = textSumary;
-  const color = speciesData.color.name;
 
   const typeIconsList = types.map(typeInfo => {
     const typeName = typeInfo.type.name;
@@ -23,8 +23,13 @@ export const HeroSection = async () => {
             </li>`;
   }).join('');
 
+  const typeName = types[0]?.type.name;  
+  const colorPokemon = pokemoncolors[typeName];
+  const colorPokemonStyle = `style="background: linear-gradient(#09132c, ${colorPokemon})"`;
+
+
   return `
-    <header class="home container" style="background: linear-gradient(${color}, #1c0217);">
+    <header class="home container" ${colorPokemonStyle};">
       <h1 class="logo">PokéCap</h1>
       
       <div class="home__container container">

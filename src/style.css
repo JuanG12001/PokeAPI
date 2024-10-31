@@ -156,74 +156,92 @@ body{
 
 .poison{
   background-color: #AA66CC;
+  box-shadow: 0px 0px 5px black;
 }
 
 .ghost{
   background-color: #6666CC;
+  box-shadow: 0px 0px 5px black;
 }
 
 .psychic{
   background-color: #843C92;
+  box-shadow: 0px 0px 5px black;
 }
 
 .normal{
   background-color: #A2A4A2;
+  box-shadow: 0px 0px 5px black;
 }
 
 .fire{
-  background-color: #DB3339;
+  background-color: #e21717;
+  box-shadow: 0px 0px 5px black;
 }
 
 .water{
   background-color: #3C95DD;
+  box-shadow: 0px 0px 5px black;
 }
 
 .grass{
-  background-color: #388c3c;
+  background-color: #1b6a1f;
+  box-shadow: 0px 0px 5px black;
 }
 
 .electric{
   background-color: #FBD216;
+  box-shadow: 0px 0px 5px black;
 }
 
 .ice{
   background-color: #2CD1F4;
+  box-shadow: 0px 0px 5px black;
 }
 
 .fighting{
   background-color: #D56C0D;
+  box-shadow: 0px 0px 5px black;
 }
 
 .ground{
   background-color: #E7B24B;
+  box-shadow: 0px 0px 5px black;
 }
 
 .bug{
-  background-color: #A8B81F;
+  background-color: #464b18;
+  box-shadow: 0px 0px 5px black;
 }
 
 .rock{
   background-color: #CAB88A;
+  box-shadow: 0px 0px 5px black;
 }
 
 .dragon{
   background-color: #0E74CB;
+  box-shadow: 0px 0px 5px black;
 }
 
 .dark{
   background-color: #60596B;
+  box-shadow: 0px 0px 5px black;
 }
 
 .steel{
   background-color: #5F92A5;
+  box-shadow: 0px 0px 5px black;
 }
 
 .fairy{
   background-color: #FB8DEC;
+  box-shadow: 0px 0px 5px black;
 }
 
 .flying{
   background-color: #698EBE;
+  box-shadow: 0px 0px 5px black;
 }
 
 

@@ -1,9 +1,13 @@
+import pokemoncolors from "../constants/pokemonColors";
 import typeIcons from "../constants/typeIcons";
 import { Button } from "./Button";
 import "./Card.css";
 
 export const Card = (pokemon) => {
-  const color = pokemon.speciesData.color.name;
+
+  if (!pokemon) {
+    return `<p>Error al cargar la información del Pokémon.</p>`;
+  }
 
   const typeIconsList = pokemon.types.map(typeInfo => {
     const typeName = typeInfo.type.name;
@@ -14,8 +18,12 @@ export const Card = (pokemon) => {
              </li>`;
   }).join('');
 
+  const typeName = pokemon.types[0]?.type.name;  
+  const colorPokemon = pokemoncolors[typeName];
+  const colorPokemonStyle = `style="background: linear-gradient(#09132c, ${colorPokemon})"`;
+
   return `
-    <article class="card__content container" style="background: linear-gradient(#09132c,${color});">
+    <article class="card__content container" ${colorPokemonStyle} );">
       <figure class="card__header">
         <img class="card__img" src="${pokemon.sprites.other.home.front_default}" alt="${pokemon.name}">
       </figure>
