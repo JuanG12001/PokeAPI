@@ -4,22 +4,36 @@ import { HeroSection } from "../components/HeroSection";
 import { PokedexSection } from "../components/PokedexSection";
 import { SearchSection } from "../components/SearchSection";
 import { Footer } from "../components/Footer";
+import { fetchPokemons } from "../services/api";
 
 export const HomePage = async () => {
   const container = document.createElement('div');
 
-  const cardSectionContent = await CardSection();
   const heroSectionContent = await HeroSection();
+  const pokedexSection = PokedexSection();
+  const searchSection = SearchSection();
+  const footerSection = Footer();
 
-  // Construir el contenedor sin usar innerHTML
-  container.appendChild(heroSectionContent);
-  container.appendChild(PokedexSection());
-  container.appendChild(SearchSection());
-  container.appendChild(cardSectionContent);
-  container.appendChild(ButtonPages()); // Añadimos ButtonPages directamente como un nodo
-  container.appendChild(Footer());
+  const cardSectionContent = document.createElement('section');
   
-  // Agregar el enlace para volver arriba
+  const loadPokemons = async (page = 0) => {
+    const offset = page * 20;
+    const pokemons = await fetchPokemons(offset);
+    cardSectionContent.innerHTML = ''; // Limpia el contenido previo
+    const newCardSection = CardSection(pokemons); // Pasa los Pokémones directamente
+    cardSectionContent.appendChild(newCardSection);
+  };
+
+  // Carga los Pokémones iniciales
+  await loadPokemons(0);
+
+  container.appendChild(heroSectionContent);
+  container.appendChild(pokedexSection);
+  container.appendChild(searchSection);
+  container.appendChild(cardSectionContent);
+  container.appendChild(ButtonPages(loadPokemons)); // Pasa la función para actualizar el offset
+  container.appendChild(footerSection);
+  
   const scrollLink = document.createElement('a');
   scrollLink.href = "#top";
   scrollLink.className = "scroll";

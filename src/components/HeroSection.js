@@ -17,7 +17,6 @@ export const HeroSection = async () => {
   const { name, sprites, textSumary, types } = pokemonHero;
   const sumary = textSumary;
 
-  // Crear la lista de tipos como nodos DOM
   const typeIconsList = types.map(typeInfo => {
     const typeName = typeInfo.type.name;
     const iconSrc = typeIcons[typeName];
@@ -34,22 +33,18 @@ export const HeroSection = async () => {
   const colorPokemon = pokemoncolors[typeName];
   const colorPokemonStyle = `background: linear-gradient(#09132c, ${colorPokemon})`;
 
-  // Crear el contenedor principal
   const header = document.createElement('header');
   header.className = 'home container';
   header.style = colorPokemonStyle;
 
-  // Añadir el título
   const logo = document.createElement('h1');
   logo.className = 'logo';
   logo.textContent = 'PokéCap';
   header.appendChild(logo);
 
-  // Crear el contenedor para la imagen y el texto
   const container = document.createElement('div');
   container.className = 'home__container container';
 
-  // Contenedor de la imagen
   const imgContainer = document.createElement('div');
   imgContainer.className = 'home__img-container';
   const img = document.createElement('img');
@@ -58,7 +53,6 @@ export const HeroSection = async () => {
   img.alt = name;
   imgContainer.appendChild(img);
 
-  // Contenedor de los textos
   const textsContainer = document.createElement('div');
   textsContainer.className = 'home__texts-container';
 

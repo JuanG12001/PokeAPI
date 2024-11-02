@@ -1,7 +1,4 @@
-
-
-
-export const fetchPokemons = async (offset = 0, limit = 20) => {
+export const fetchPokemons = async (offset = 0, limit = 9) => {
   try {
     const response = await fetch(`${import.meta.env.VITE_POKEAPI_URL}?offset=${offset}&limit=${limit}`);
     const data = await response.json();
