@@ -3,10 +3,11 @@ import "./SearchSection.css";
 
 export const SearchSection = () =>{
 
+  const section = document.createElement('section');
+  section.className = 'search container';
 
-  return `
+  section.innerHTML = `
 
-  <section class="search container">
 
     <div class="search__container container">
 
@@ -49,9 +50,9 @@ export const SearchSection = () =>{
       </div>
 
     </div>
-
-  </section>
   
   `
+
+  return section
 
 }

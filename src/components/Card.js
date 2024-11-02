@@ -4,62 +4,81 @@ import { Button } from "./Button";
 import "./Card.css";
 
 export const Card = (pokemon) => {
-
   if (!pokemon) {
-    return `<p>Error al cargar la información del Pokémon.</p>`;
+    const errorMessage = document.createElement('p');
+    errorMessage.textContent = 'Error al cargar la información del Pokémon.';
+    return errorMessage;
   }
 
   const typeIconsList = pokemon.types.map(typeInfo => {
     const typeName = typeInfo.type.name;
     const iconSrc = typeIcons[typeName];
-    return ` <li class="${typeName} card__type">
-              <img class="card__type-img" src="${iconSrc}" alt="${typeName}">
-              ${typeName}
-             </li>`;
-  }).join('');
+
+    const typeItem = document.createElement('li');
+    typeItem.className = `${typeName} card__type`;
+    typeItem.innerHTML = `
+      <img class="card__type-img" src="${iconSrc}" alt="${typeName}">
+      ${typeName}
+    `;
+    return typeItem;
+  });
 
   const typeName = pokemon.types[0]?.type.name;  
   const colorPokemon = pokemoncolors[typeName];
-  const colorPokemonStyle = `style="background: linear-gradient(#09132c, ${colorPokemon})"`;
+  const colorPokemonStyle = `background: linear-gradient(#09132c, ${colorPokemon})`;
 
-  return `
-    <article class="card__content container" ${colorPokemonStyle} );">
-      <figure class="card__header">
-        <img class="card__img" src="${pokemon.sprites.other.home.front_default}" alt="${pokemon.name}">
-      </figure>
+  const article = document.createElement('article');
+  article.className = 'card__content container';
+  article.style = colorPokemonStyle;
 
-      <div class="card__container-text">
-        <i class="fa-solid fa-circle"></i>
-        <h2 class="card__title">${pokemon.name}</h2>
-        <i class="fa-solid fa-circle"></i>
-      </div>
+  article.innerHTML = `
+    <figure class="card__header">
+      <img class="card__img" src="${pokemon.sprites.other.home.front_default}" alt="${pokemon.name}">
+    </figure>
 
-      <ul class="card__type-container">
-        ${typeIconsList}
-      </ul>  
-      
-      <footer class="card__estadisticas">
-          <div class="card__estadisticas-altura">
-              <p class="card__altura">
-                  ${Number.isInteger(pokemon.height / 10) 
-                      ? (pokemon.height / 10) 
-                      : (pokemon.height / 10).toFixed(1)} M
-              </p> <!-- Altura en metros -->
-              <span class="card__altura-icon"><i class="fa-solid fa-ruler"></i>Altura</span>
-          </div>
-
-          <div class="card__estadisticas-peso">
-              <p class="card__peso">
-                  ${Number.isInteger(pokemon.weight / 10) 
-                      ? (pokemon.weight / 10) 
-                      : (pokemon.weight / 10).toFixed(1)} KG
-              </p> <!-- Peso en kilogramos -->
-              <span class="card__peso-icon"><i class="fa-solid fa-dumbbell"></i>Peso</span>
-          </div>
-      </footer>
-
-      ${Button()}
-    </article>
+    <div class="card__container-text">
+      <i class="fa-solid fa-circle"></i>
+      <h2 class="card__title">${pokemon.name}</h2>
+      <i class="fa-solid fa-circle"></i>
+    </div>
   `;
 
+  const ul = document.createElement('ul');
+  ul.className = 'card__type-container';
+  typeIconsList.forEach(typeItem => ul.appendChild(typeItem));
+  article.appendChild(ul);
+
+  const footer = document.createElement('footer');
+  footer.className = 'card__estadisticas';
+
+  const alturaDiv = document.createElement('div');
+  alturaDiv.className = 'card__estadisticas-altura';
+  alturaDiv.innerHTML = `
+    <p class="card__altura">
+      ${Number.isInteger(pokemon.height / 10) 
+          ? (pokemon.height / 10) 
+          : (pokemon.height / 10).toFixed(1)} M
+    </p>
+    <span class="card__altura-icon"><i class="fa-solid fa-ruler"></i>Altura</span>
+  `;
+  
+  const pesoDiv = document.createElement('div');
+  pesoDiv.className = 'card__estadisticas-peso';
+  pesoDiv.innerHTML = `
+    <p class="card__peso">
+      ${Number.isInteger(pokemon.weight / 10) 
+          ? (pokemon.weight / 10) 
+          : (pokemon.weight / 10).toFixed(1)} KG
+    </p>
+    <span class="card__peso-icon"><i class="fa-solid fa-dumbbell"></i>Peso</span>
+  `;
+
+  footer.appendChild(alturaDiv);
+  footer.appendChild(pesoDiv);
+  article.appendChild(footer);
+
+  // Añadir el botón que también debería ser un nodo DOM
+  article.appendChild(Button());
+
+  return article; // Devolver el nodo DOM
 };
