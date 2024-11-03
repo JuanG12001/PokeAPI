@@ -9,9 +9,7 @@ export const HeroSection = async () => {
   const pokemonHero = await pokemonHeroSection();
 
   if (!pokemonHero) {
-    const errorMessage = document.createElement('p');
-    errorMessage.textContent = 'Error al cargar la información del Pokémon.';
-    return errorMessage;
+    return `<p>Error al cargar la información del Pokémon.</p>`;
   }
 
   const { name, sprites, textSumary, types } = pokemonHero;
@@ -20,67 +18,53 @@ export const HeroSection = async () => {
   const typeIconsList = types.map(typeInfo => {
     const typeName = typeInfo.type.name;
     const iconSrc = typeIcons[typeName];
-
-    const listItem = document.createElement('li');
-    listItem.className = `${typeName} home__category-tipo`;
-    listItem.innerHTML = `
-      <img class="home__icon" src="${iconSrc}" alt="${typeName}">
-    `;
-    return listItem;
-  });
+    return `<li class="${typeName} home__category-tipo">
+              <img class="home__icon" src="${iconSrc}" alt="${typeName}">
+            </li>`;
+  }).join('');
 
   const typeName = types[0]?.type.name;  
   const colorPokemon = pokemoncolors[typeName];
-  const colorPokemonStyle = `background: linear-gradient(#09132c, ${colorPokemon})`;
+  const colorPokemonStyle = `style="background: linear-gradient(#09132c, ${colorPokemon})"`;
 
-  const header = document.createElement('header');
-  header.className = 'home container';
-  header.style = colorPokemonStyle;
+  const homeDiv = document.createElement('div')
 
-  const logo = document.createElement('h1');
-  logo.className = 'logo';
-  logo.textContent = 'PokéCap';
-  header.appendChild(logo);
+  homeDiv.innerHTML = `
+    <header class="home container" ${colorPokemonStyle};">
+      <h1 class="logo">PokéCap</h1>
+      
+      <div class="home__container container">
+       
+        <div class="home__img-container">
+          <img class="home__img" src="${sprites.other.home.front_default}" alt="${name}">
+        </div> 
 
-  const container = document.createElement('div');
-  container.className = 'home__container container';
+        <div class="home__texts-container">
+            
+          <h2 class="home__name-pokemon">${name}</h2>
+           
+          <ul class="home__category">
+            ${typeIconsList} 
+          </ul>   
+          
+          <p class="home__sumary">${sumary}</p>
+          
 
-  const imgContainer = document.createElement('div');
-  imgContainer.className = 'home__img-container';
-  const img = document.createElement('img');
-  img.className = 'home__img';
-  img.src = sprites.other.home.front_default;
-  img.alt = name;
-  imgContainer.appendChild(img);
+          <div class = "home__button-components"></div>
+          <div class = "home__redes-components"></div>
+        
+        </div> 
 
-  const textsContainer = document.createElement('div');
-  textsContainer.className = 'home__texts-container';
+      </div>
 
-  const nameElement = document.createElement('h2');
-  nameElement.className = 'home__name-pokemon';
-  nameElement.textContent = name;
-  textsContainer.appendChild(nameElement);
+    </header>
+  `;
 
-  const ul = document.createElement('ul');
-  ul.className = 'home__category';
-  typeIconsList.forEach(typeItem => ul.appendChild(typeItem)); // Añadir los nodos de tipos
-  textsContainer.appendChild(ul);
+  const redesContainer = homeDiv.querySelector('.home__redes-components');
+  redesContainer.appendChild(Redes()); 
 
-  const summaryElement = document.createElement('p');
-  summaryElement.className = 'home__sumary';
-  summaryElement.textContent = sumary;
-  textsContainer.appendChild(summaryElement);
+  const buttonContainer = homeDiv.querySelector('.home__button-components');
+  buttonContainer.appendChild(Button()); 
 
-  // Añadir botones y redes sociales
-  textsContainer.appendChild(Button());
-  textsContainer.appendChild(Redes());
-
-  // Agregar contenedores de imagen y texto al contenedor principal
-  container.appendChild(imgContainer);
-  container.appendChild(textsContainer);
-
-  // Añadir el contenedor principal al header
-  header.appendChild(container);
-
-  return header; // Devolver el nodo DOM
+  return homeDiv
 };

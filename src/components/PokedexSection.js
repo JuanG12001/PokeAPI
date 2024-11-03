@@ -5,60 +5,33 @@ export const PokedexSection = () => {
   section.className = 'pokedex container';
   section.id = 'top';
 
-  const pokedexContainer = document.createElement('div');
-  pokedexContainer.className = 'pokedex__container container';
+  section.innerHTML = `
+    <div class="pokedex__container container">
+      <div class="pokedex__container-text">
+        <h2 class="pokedex__title">
+          ¡Busca y captura a tus <span class="pokedex__title--color">3</span> Pokémon iniciales ahora!
+        </h2>
+        <p class="pokedex__sumary">
+          Solo podrás capturar 3, y una vez los captures, no podrás cambiarlos. 
+          Abajo encontrarás todos los Pokémones se colocara automáticamente en sus casillas. 
+          ¡Asegúrate de elegir bien y comienza tu aventura!
+        </p>
+      </div>
 
-  const textContainer = document.createElement('div');
-  textContainer.className = 'pokedex__container-text';
+      <div class="pokedex__container-content">
+        <div class="pokedex__cotainer-img">
+          <img class="pokedex__img" src="/src/assets/pj-pokedex.png" alt="">
+        </div>
+        <div class="pokedex__cantainer-pokemon">
+          ${[1, 2, 3].map(i => `
+            <div class="pokedex__pokemon-contaniner">
+              <img class="pokedex__pokemon pokemon-${i}" src="/src/assets/pokeball.png" alt="">
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `;
 
-  const title = document.createElement('h2');
-  title.className = 'pokedex__title';
-  title.innerHTML = `¡Busca y captura a tus <span class="pokedex__title--color">3</span> Pokémon iniciales ahora!`;
-
-  const summary = document.createElement('p');
-  summary.className = 'pokedex__sumary';
-  summary.textContent = 'Solo podrás capturar 3, y una vez los captures, no podrás cambiarlos. Abajo encontrarás todos los Pokémones se colocara automáticamente en sus casillas. ¡Asegúrate de elegir bien y comienza tu aventura!';
-
-  textContainer.appendChild(title);
-  textContainer.appendChild(summary);
-
-  pokedexContainer.appendChild(textContainer);
-
-  const contentContainer = document.createElement('div');
-  contentContainer.className = 'pokedex__container-content';
-
-  const imageContainer = document.createElement('div');
-  imageContainer.className = 'pokedex__cotainer-img';
-
-  const image = document.createElement('img');
-  image.className = 'pokedex__img';
-  image.src = '/src/assets/pj-pokedex.png';
-  image.alt = '';
-
-  imageContainer.appendChild(image);
-
-  const pokemonContainer = document.createElement('div');
-  pokemonContainer.className = 'pokedex__cantainer-pokemon';
-
-  for (let i = 1; i <= 3; i++) {
-    const pokemonContaniner = document.createElement('div');
-    pokemonContaniner.className = 'pokedex__pokemon-contaniner';
-
-    const pokemonImage = document.createElement('img');
-    pokemonImage.className = `pokedex__pokemon pokemon-${i}`;
-    pokemonImage.src = '/src/assets/pokeball.png';
-    pokemonImage.alt = '';
-
-    pokemonContaniner.appendChild(pokemonImage);
-    pokemonContainer.appendChild(pokemonContaniner);
-  }
-
-  contentContainer.appendChild(imageContainer);
-  contentContainer.appendChild(pokemonContainer);
-
-  pokedexContainer.appendChild(contentContainer);
-
-  section.appendChild(pokedexContainer);
-
-  return section; 
+  return section;
 };

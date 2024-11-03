@@ -2,6 +2,7 @@ import { Card } from "./Card";
 import "./CardSection.css";
 
 export const CardSection = (pokemons) => {
+
   if (!pokemons || pokemons.length === 0) {
     const errorMessage = document.createElement('p');
     errorMessage.textContent = 'Error al cargar los pokemones.';
@@ -22,4 +23,5 @@ export const CardSection = (pokemons) => {
   section.appendChild(autoFitContainer);
 
   return section;
+  
 };

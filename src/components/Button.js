@@ -1,21 +1,26 @@
 import "./Button.css";
 
-export const Button = () => {
-  // Crear el elemento del botón
+
+export const Button = ( context )=>{
+
+  /** @type {HTMLelement}  */
   const button = document.createElement('button');
-  button.className = 'buttom buttom--card buttom--animation';
+  button.className = ('buttom buttom--card buttom--animation')
 
-  // Crear la imagen del ícono de la Pokébola
-  const icon = document.createElement('img');
-  icon.className = 'icon-pokeball';
-  icon.src = '/src/assets/icon-pokeball.png';
-  icon.alt = 'icon-pokeball';
+  button.innerHTML = `
+      <img class="icon-pokeball" src="/src/assets/icon-pokeball.png" alt="icon-pokeball">
+      Capturar Pokémon
+  `  
 
-  // Añadir la imagen al botón
-  button.appendChild(icon);
-  
-  // Añadir el texto al botón
-  button.appendChild(document.createTextNode('Capturar Pokémon'));
+  // button.addEventListener('click', (  ) =>{
+  //     if( context === 'home' ){
+  //       console.log('hola')
+  //     }else if( context === 'card'){
+  //       console.log('rata')
+  //     }
 
-  return button; // Devolver el nodo DOM
-};
+  // })
+
+  return button
+
+}
