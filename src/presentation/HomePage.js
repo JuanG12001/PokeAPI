@@ -26,14 +26,13 @@ export const HomePage = async () => {
 
   };
 
-  // Carga los Pokémones iniciales
   await loadPokemons(0);
 
   container.appendChild(heroSectionContent);
   container.appendChild(pokedexSection);
   container.appendChild(searchSection);
   container.appendChild(cardSectionContent);
-  container.appendChild(ButtonPages(loadPokemons)); // Pasa la función para actualizar el offset
+  container.appendChild(ButtonPages(loadPokemons)); 
   container.appendChild(footerSection);
   
   const scrollLink = document.createElement('a');
