@@ -74,7 +74,13 @@ export const Card = (pokemon) => {
   `;
 
   const handleCardClick = () => {
-    console.log('Capturando 2');
+    const captureEvent = new CustomEvent('capturePokemon', { 
+      detail: { 
+        pokemonImage: pokemon.sprites.other.home.front_default,
+        pokemonName: pokemon.name 
+      } 
+    });
+    document.dispatchEvent(captureEvent);
   };
 
 

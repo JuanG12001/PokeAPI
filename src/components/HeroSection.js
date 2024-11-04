@@ -62,10 +62,11 @@ export const HeroSection = async () => {
 
 
   const handleCardClick = () => {
-    let imagenButtom = document.querySelector('.home__img');
-    console.log(imagenButtom)
+    const pokemonImage = document.querySelector('.home__img').src;
+    const captureEvent = new CustomEvent('capturePokemon', { detail: { pokemonImage } });
+    document.dispatchEvent(captureEvent);
   };
-
+  
   const redesContainer = homeDiv.querySelector('.home__redes-components');
   redesContainer.appendChild(Redes()); 
 

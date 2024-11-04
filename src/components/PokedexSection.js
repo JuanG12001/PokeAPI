@@ -13,7 +13,7 @@ export const PokedexSection = () => {
         </h2>
         <p class="pokedex__sumary">
           Solo podrás capturar 3, y una vez los captures, no podrás cambiarlos. 
-          Abajo encontrarás todos los Pokémones se colocara automáticamente en sus casillas. 
+          Abajo encontrarás todos los Pokémones se colocará automáticamente en sus casillas. 
           ¡Asegúrate de elegir bien y comienza tu aventura!
         </p>
       </div>
@@ -25,13 +25,29 @@ export const PokedexSection = () => {
         <div class="pokedex__cantainer-pokemon">
           ${[1, 2, 3].map(i => `
             <div class="pokedex__pokemon-contaniner">
-              <img class="pokedex__pokemon pokemon-${i}" src="/src/assets/pokeball.png" alt="">
+              <img class="pokedex__pokemon pokemon-${i}" src="/src/assets/pokeball.png" alt="pokemon-${i}">
             </div>
           `).join('')}
         </div>
       </div>
     </div>
   `;
+
+  const addPokemonToPokedex = (pokemonImage, pokemonName) => {
+    const emptySlots = section.querySelectorAll('.pokedex__pokemon[src="/src/assets/pokeball.png"]');
+    if (emptySlots.length > 0) {
+      emptySlots[0].src = pokemonImage;
+      emptySlots[0].alt = pokemonName;
+    } else {
+      console.log("No quedan casillas disponibles para capturar más Pokémon.");
+    }
+  };
+
+
+  document.addEventListener('capturePokemon', (event) => {
+    const { pokemonImage, pokemonName } = event.detail;
+    addPokemonToPokedex(pokemonImage, pokemonName);
+  });
 
   return section;
 };
