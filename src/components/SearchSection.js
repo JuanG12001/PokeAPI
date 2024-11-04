@@ -14,20 +14,24 @@ export const SearchSection = () =>{
         <div class="searh__container-text-tipo">
           
           <div>
-
+          
               <div class="search__container-tipos">
                 <i class="fa-regular fa-clipboard"></i> 
                 <h3 class="search__title-type">Busqueda por tipo:</h3>
               </div>
 
-              <ul class="tipo container">
+              <ul class="tipo ">
 
-                <span data-type="tipo-todos" class="search__icon-home"><i class="fa-solid fa-house-chimney"></i></span>
-              
-                <li class="tipo__container">
-                  <button class="search__buttom" data-type="tipo-planta"><img class="search__img-icon" src="/src/assets/icon-bug.png" alt=""></button>
-                </li>
-              
+                  <span data-type="tipo-todos" class="search__icon-home"><i class="fa-solid fa-house-chimney"></i></span>
+
+                  ${Array.from({ length: 11 }).map((_, i) => `
+                      <li class="tipo__container">
+                          <button class="search__buttom" data-type="tipo-planta">
+                              <img class="search__img-icon" src="/src/assets/icon-bug.png" alt="">
+                          </button>
+                      </li>
+                  `).join('')}
+
               </ul>
 
           </div>
