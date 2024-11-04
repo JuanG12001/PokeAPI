@@ -60,11 +60,19 @@ export const HeroSection = async () => {
     </header>
   `;
 
+
+  const handleCardClick = () => {
+    let imagenButtom = document.querySelector('.home__img');
+    console.log(imagenButtom)
+  };
+
   const redesContainer = homeDiv.querySelector('.home__redes-components');
   redesContainer.appendChild(Redes()); 
 
   const buttonContainer = homeDiv.querySelector('.home__button-components');
-  buttonContainer.appendChild(Button()); 
+  buttonContainer.appendChild(Button({ context: 'home', onClick: handleCardClick })); 
 
   return homeDiv
+
+  
 };

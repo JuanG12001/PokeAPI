@@ -73,12 +73,15 @@ export const Card = (pokemon) => {
     <span class="card__peso-icon"><i class="fa-solid fa-dumbbell"></i>Peso</span>
   `;
 
+  const handleCardClick = () => {
+    console.log('Capturando 2');
+  };
+
+
   footer.appendChild(alturaDiv);
   footer.appendChild(pesoDiv);
   article.appendChild(footer);
+  article.appendChild(Button({ context: 'card', onClick: handleCardClick }));
 
-  // Añadir el botón que también debería ser un nodo DOM
-  article.appendChild(Button());
-
-  return article; // Devolver el nodo DOM
+  return article; 
 };

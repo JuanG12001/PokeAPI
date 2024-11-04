@@ -81,7 +81,7 @@
 @keyframes mover {
   0% {
     transform: translateY(0);
-    filter: drop-shadow(0 0 1.5em #c520e6fc);
+    filter: drop-shadow(0 0 1.5em #723683);
   }
   25% {
     transform: translateY(-20px); 
@@ -89,7 +89,7 @@
   }
   50% {
     transform: translateY(0); 
-    filter: drop-shadow(0 0 1.5em #b11cdefc);
+    filter: drop-shadow(0 0 1.5em #723683);
   }
   75% {
     transform: translateY(-20px); 
@@ -97,7 +97,7 @@
   }
   100% {
     transform: translateY(0); 
-    filter: drop-shadow(0 0 1.5em #c126e8fc);
+    filter: drop-shadow(0 0 1.5em #723683);
   }
 }
 

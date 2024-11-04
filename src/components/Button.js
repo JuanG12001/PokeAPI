@@ -1,7 +1,8 @@
 import "./Button.css";
 
 
-export const Button = ( context )=>{
+
+export const Button = ({ context, onClick, rata } )=>{
 
   /** @type {HTMLelement}  */
   const button = document.createElement('button');
@@ -12,14 +13,13 @@ export const Button = ( context )=>{
       Capturar Pokémon
   `  
 
-  // button.addEventListener('click', (  ) =>{
-  //     if( context === 'home' ){
-  //       console.log('hola')
-  //     }else if( context === 'card'){
-  //       console.log('rata')
-  //     }
-
-  // })
+  button.addEventListener('click', () => {
+    if (context === 'home') {
+      onClick();  
+    } else if (context === 'card') {
+      onClick();  
+    }
+  });
 
   return button
 

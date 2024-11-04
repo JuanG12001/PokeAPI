@@ -19,9 +19,11 @@ export const HomePage = async () => {
   const loadPokemons = async (page = 0) => {
     const offset = page * 20;
     const pokemons = await fetchPokemons(offset);
-    cardSectionContent.innerHTML = ''; // Limpia el contenido previo
-    const newCardSection = CardSection(pokemons); // Pasa los Pokémones directamente
+    
+    cardSectionContent.innerHTML = ' ';      
+    const newCardSection = CardSection(pokemons); 
     cardSectionContent.appendChild(newCardSection);
+
   };
 
   // Carga los Pokémones iniciales
