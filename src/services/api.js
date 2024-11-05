@@ -2,7 +2,7 @@ export const fetchAllPokemonNames = async () => {
   try {
     const response = await fetch(`${import.meta.env.VITE_POKEAPI_URL}?limit=10000`);
     const data = await response.json();
-    return data.results; // Devuelve solo el nombre y la URL de cada Pokémon
+    return data.results; 
   } catch (error) {
     console.error("Error fetching all Pokémon names:", error);
     return [];
