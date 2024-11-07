@@ -31,7 +31,8 @@ export const HeroSection = async () => {
 
   homeDiv.innerHTML = `
     <header class="home container" ${colorPokemonStyle};">
-      <h1 class="logo">PokéCap</h1>
+     
+      <h1 class="logo container">PokéCap</h1>
       
       <div class="home__container container">
        

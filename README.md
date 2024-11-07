@@ -3,6 +3,12 @@
 
 **PokeCap** es un juego de captura de Pokémon basado en la [PokéAPI](https://pokeapi.co/). Permite a los usuarios explorar, capturar sus Pokémones favoritos. Está diseñado para ofrecer una experiencia interactiva donde los jugadores pueden elegir y guardar tres Pokémon iniciales y comenzar su propia aventura Pokémon.
 
+## Visita la Web
+
+¡Puedes probar **PokeCap** en línea! Visita la siguiente URL para capturar y explorar:
+
+[https://pokemoncap.netlify.app/](https://pokemoncap.netlify.app/)
+
 ## Requisitos Previos
 
 - **Node.js** (versión 14 o superior)
@@ -90,3 +96,5 @@ Para contribuir a **PokeCap**, sigue estos pasos:
 5. Abre un pull request en el repositorio original.
 
 Asegúrate de seguir las convenciones de código y realizar pruebas antes de enviar tu pull request. ¡Gracias por ayudar a mejorar **PokeCap**!
+
+
